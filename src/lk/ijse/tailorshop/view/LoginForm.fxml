@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ancPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: TRANSPARENT;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.LoginFormController">
+   <children>
+      <Pane layoutX="325.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <Pane layoutY="-45.0" prefHeight="540.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to right top, #7A577A,#154666); -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="148.0" layoutX="38.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="260.0" layoutY="50.0" prefHeight="350.0" prefWidth="350.0">
+               <children>
+                  <Text fx:id="lblLogin" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login" textAlignment="CENTER" wrappingWidth="350.0">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtUserName" layoutX="80.0" layoutY="180.0" prefWidth="230.0" promptText="User Name" styleClass="login-text-Field">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font></TextField>
+                  <Button layoutX="100.0" layoutY="260.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #161F30; -fx-background-radius: 20;" text="Login" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="40.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/free-user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" layoutX="40.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/pass.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#4d0303" layoutX="18.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back" wrappingWidth="265.0">
+                     <font>
+                        <Font name="ANDREIAN Regular" size="36.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="30.0" layoutY="63.0" text="Login To Continue">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblChange" alignment="CENTER" layoutY="302.0" onMouseClicked="#changeLoginOnAction" prefWidth="350.0" text="if you Supervisor ? click here!" textFill="#0095ff">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="10.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <PasswordField fx:id="txtPassword" layoutX="80.0" layoutY="223.0" prefHeight="26.0" prefWidth="230.0" promptText="Password" styleClass="login-text-Field">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font></PasswordField>
+                  <Label fx:id="lblError" layoutY="327.0" prefHeight="18.0" prefWidth="350.0" textFill="#eb0a0a" />
+               </children>
+            </Pane>
+            <Button fx:id="btnClose" layoutX="583.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;">
+               <graphic>
+                  <FontAwesomeIconView fill="#b20404" glyphName="REMOVE" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

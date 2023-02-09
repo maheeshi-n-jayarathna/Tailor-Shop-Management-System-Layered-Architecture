@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anc" prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: #bdc3c7;" styleClass="anchorPane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.DashBoardFormController">
+   <children>
+      <Pane layoutX="30.0" layoutY="324.0" prefHeight="345.0" prefWidth="580.0" style="-fx-background-color: #dfe6e9; -fx-background-radius: 10;">
+         <children>
+            <BarChart fx:id="barChart" layoutX="31.0" layoutY="40.0" prefHeight="294.0" prefWidth="531.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Label layoutX="197.0" layoutY="14.0" text="NUMBER OF SALES LAST 30 DAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="255.0" layoutY="317.0" text="NUMBER OF DAYS">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="-20.0" layoutY="164.0" rotate="270.0" text="NUMBER OF SALES">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="30.0" layoutY="14.0" prefHeight="68.0" prefWidth="994.0" style="-fx-background-color:  linear-gradient(to right , #7A577A,#154666) ;">
+         <effect>
+            <ColorAdjust />
+         </effect>
+         <children>
+            <Button fx:id="btnClose" layoutX="958.0" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #154666;">
+               <graphic>
+                  <FontAwesomeIconView fill="#b20404" glyphName="REMOVE" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <Pane layoutX="30.0" layoutY="99.0" prefHeight="135.0" prefWidth="994.0" style="-fx-background-color: #dfe6e9; -fx-background-radius: 20;">
+         <children>
+            <Pane layoutX="503.0" layoutY="19.0" prefHeight="89.0" prefWidth="223.0" style="-fx-background-color: #0be881; -fx-background-radius: 20;">
+               <children>
+                  <Text layoutX="102.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL CUSTOMER">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblTotalCustomers" layoutX="178.0" layoutY="19.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="89.0" prefWidth="95.0" style="-fx-background-color: #05c46b; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="28.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/Customer.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="750.0" layoutY="19.0" prefHeight="89.0" prefWidth="223.0" style="-fx-background-color: #cd84f1; -fx-background-radius: 20;">
+               <children>
+                  <Text layoutX="127.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SOLD ITEMS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="lblSoldItem" layoutX="180.0" layoutY="21.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="-2.0" prefHeight="89.0" prefWidth="95.0" style="-fx-background-color: #c56cf0; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="25.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/Customer.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="256.0" layoutY="19.0" prefHeight="89.0" prefWidth="223.0" style="-fx-background-color: #fbc531; -fx-background-radius: 20;">
+               <children>
+                  <Text layoutX="112.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL ORDERS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblTotalOrders" layoutX="176.0" layoutY="19.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="89.0" prefWidth="95.0" style="-fx-background-color: #e1b12c; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="48.0" layoutX="28.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/Order.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="19.0" prefHeight="89.0" prefWidth="223.0" style="-fx-background-color: #55efc4; -fx-background-radius: 20;">
+               <children>
+                  <Text layoutX="126.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL SALES">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblTotalSales" layoutX="150.0" layoutY="14.0" text="Rs.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="89.0" prefWidth="95.0" style="-fx-background-color: #00b894; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/Sales.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="30.0" layoutY="255.0" prefHeight="35.0" prefWidth="994.0" style="-fx-background-color:  linear-gradient(to right , #7A577A,#154666) ;">
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Pane>
+      <Pane layoutX="629.0" layoutY="324.0" prefHeight="345.0" prefWidth="395.0" style="-fx-background-color: #dfe6e9; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="50.0" layoutY="46.0" text="Monthly Income From Selling Item">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblMonthlyIncome" layoutX="137.0" layoutY="173.0" text="Rs.0.00">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc" prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: #bdc3c7;" styleClass="anchorPane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.ReportFormController">
+   <children>
+      <Pane layoutX="30.0" layoutY="14.0" prefHeight="68.0" prefWidth="990.0" style="-fx-background-color: linear-gradient(to right , #7A577A,#154666);">
+         <children>
+            <Button fx:id="btnClose" layoutX="958.0" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #154666;">
+               <graphic>
+                  <FontAwesomeIconView fill="#b20404" glyphName="REMOVE" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <Button fx:id="btnAdd" layoutX="497.0" layoutY="309.0" mnemonicParsing="false" onAction="#getIncomeReport" prefHeight="35.0" prefWidth="122.0" styleClass="add-navigation-button" text="Income" textFill="#eee1e1">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="503.0" layoutY="393.0" mnemonicParsing="false" onAction="#customerReport" prefHeight="35.0" prefWidth="122.0" styleClass="add-navigation-button" text="Customer" textFill="#eee1e1">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: TRANSPARENT;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.SplashScreenController">
+   <children>
+      <Pane layoutX="357.0" layoutY="194.0" prefHeight="300.0" prefWidth="500.0">
+         <children>
+            <ImageView fx:id="imgSlash" fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="false" />
+            <Rectangle fx:id="rctContainer" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="8.0" layoutX="2.0" layoutY="290.0" stroke="BLACK" strokeType="INSIDE" width="496.0" />
+            <Rectangle fx:id="rctLoading" arcHeight="5.0" arcWidth="5.0" fill="#1ffff9" height="8.0" layoutX="2.0" layoutY="290.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+            <Label fx:id="lblLoading" alignment="CENTER" layoutY="275.0" prefWidth="500.0" text="Welcome to Tailor Shop Management System">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Label>
+            <Label text="TSMS v1.0.0">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

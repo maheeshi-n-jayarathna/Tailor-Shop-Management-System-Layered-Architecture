@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anc" prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: #bdc3c7;" styleClass="anchorPane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.PurchaseOrderFormController">
+   <children>
+      <Pane layoutX="30.0" layoutY="14.0" prefHeight="68.0" prefWidth="990.0" style="-fx-background-color: linear-gradient(to right , #7A577A,#154666);">
+         <children>
+            <Button fx:id="btnClose" layoutX="958.0" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #154666;">
+               <graphic>
+                  <FontAwesomeIconView fill="#b20404" glyphName="REMOVE" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <TableView fx:id="tblOrders" layoutX="300.0" layoutY="400.0" onMouseClicked="#tblOrdersClickOnAction" prefHeight="250.0" prefWidth="723.0">
+         <columns>
+            <TableColumn fx:id="colOrderId" prefWidth="135.33334350585938" text="Order Id" />
+            <TableColumn fx:id="colDescription" prefWidth="163.66665649414062" text="Description" />
+            <TableColumn fx:id="colAdvance" prefWidth="157.33331298828125" text="Advance" />
+            <TableColumn fx:id="colTotal" minWidth="0.0" prefWidth="127.0" text="Total" />
+            <TableColumn fx:id="colAction" prefWidth="139.0" text="Action" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnAdd" layoutX="300.0" layoutY="220.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #2ecc71;" styleClass="remove-navigation-button" text="add" textFill="#eee1e1">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="180.0">
+         <children>
+            <Label text="Order Id">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbOrderId" onAction="#cmbOrderIdOnAction" prefHeight="29.0" prefWidth="150.0" styleClass="combo-box">
+               <HBox.margin>
+                  <Insets left="62.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="100.0">
+         <children>
+            <Label text="Customer  Nic">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbCustomerNic" onAction="#cmbCustomerNicOnAction" prefHeight="29.0" prefWidth="150.0" styleClass="combo-box">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="140.0">
+         <children>
+            <Label text="Customer Name">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCustomerName" editable="false" prefHeight="29.0" prefWidth="150.0" styleClass="other-text-field">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="590.0" layoutY="180.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="660.0" prefHeight="30.0">
+         <children>
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancel" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #ff1744;" styleClass="remove-navigation-button" text="Cancel" textFill="#eee1e1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Label text="Total Advance">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtTotalAdvance" editable="false" prefHeight="29.0" prefWidth="100.0" styleClass="other-text-field">
+               <HBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </HBox>
+            <Label text="Full Total">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </HBox>
+            <TextField fx:id="txtFullTotal" editable="false" prefHeight="29.0" prefWidth="100.0" styleClass="other-text-field">
+               <HBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="Final amount due">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtLastAmountDue" editable="false" prefHeight="29.0" prefWidth="100.0" styleClass="other-text-field">
+               <HBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="btnConfirm" mnemonicParsing="false" onAction="#btnConfirmOrderOnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #3498db;" styleClass="confirmOrder-navigation-button" text="Purchase" textFill="#eee1e1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox fx:id="vBoxBlouse" layoutX="30.0" layoutY="250.0" prefHeight="400.0" prefWidth="240.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/blouseLength.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#110e14" strokeType="OUTSIDE" strokeWidth="0.0" text="Length">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtLength" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="49.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/neck.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1b1919" strokeType="OUTSIDE" strokeWidth="0.0" text="Neck">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtNeck" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="74.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/bust.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#0d0d0d" strokeType="OUTSIDE" strokeWidth="0.0" text="Bust">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtBust" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="77.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/downAShoulder.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1b1616" strokeType="OUTSIDE" strokeWidth="0.0" text="Down a shoulder">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtDownAShoulder" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/underBust.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1e1c1c" strokeType="OUTSIDE" strokeWidth="0.0" text="Under Bust">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtUnderBust" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="36.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/sleeve.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#111010" strokeType="OUTSIDE" strokeWidth="0.0" text="Sleeve">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtSleeve" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/waist.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#221616" strokeType="OUTSIDE" strokeWidth="0.0" text="West">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtWest" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="74.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/chest.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#221c1c" strokeType="OUTSIDE" strokeWidth="0.0" text="Chest">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtChest" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="71.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="vBoxShirt" layoutX="30.0" layoutY="250.0" prefHeight="400.0" prefWidth="240.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/shirtLength.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1e1f22" strokeType="OUTSIDE" strokeWidth="0.0" text="Shirt length">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtShirtLength" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="29.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/boyChest.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#221f1f" strokeType="OUTSIDE" strokeWidth="0.0" text="Chest">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtChestBoy" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="71.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/downAShoulder.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1e1b1b" strokeType="OUTSIDE" strokeWidth="0.0" text="Down a shoulder">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtDownAShoulderBoy" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="29.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/neck.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#220f0f" strokeType="OUTSIDE" strokeWidth="0.0" text="Neck">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtNeckBoy" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="74.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/sleeve.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1e1111" strokeType="OUTSIDE" strokeWidth="0.0" text="Sleeve">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtSleeveBoy" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="55.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="vBoxDenim" layoutX="30.0" layoutY="250.0" prefHeight="400.0" prefWidth="240.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/croth.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#2c2828" strokeType="OUTSIDE" strokeWidth="0.0" text="Croth">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtCrotch" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="66.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/Knee.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#2c2828" strokeType="OUTSIDE" strokeWidth="0.0" text="Knee">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtKnee" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="69.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/calf.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#2c2626" strokeType="OUTSIDE" strokeWidth="0.0" text="Calf">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtCalf" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="75.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/hipAndWaistDistance.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#2c2727" strokeType="OUTSIDE" strokeWidth="0.0" text="Hip and west distanse" wrappingWidth="74.8046875">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtHipAndWest" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="22.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/inseam.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#282424" strokeType="OUTSIDE" strokeWidth="0.0" text="Inseam">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtInseam" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="53.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/thigh.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#281e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="Thigth">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtThigh" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="54.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/hip.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#171111" strokeType="OUTSIDE" strokeWidth="0.0" text="Hip">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtHip" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="73.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="vBoxFrockAndSkirt" layoutX="30.0" layoutY="250.0" prefHeight="400.0" prefWidth="240.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/waist.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1b1818" strokeType="OUTSIDE" strokeWidth="0.0" text="West">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtWestFrock" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="69.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/hip.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#171515" strokeType="OUTSIDE" strokeWidth="0.0" text="Hip">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtHipFrock" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="78.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/skirtLength.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#282222" strokeType="OUTSIDE" strokeWidth="0.0" text="Skirt length">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtSkirtLength" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/frockLength.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#0d0c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="Frock length">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtFrockLength" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="24.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/sleeve.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#252020" strokeType="OUTSIDE" strokeWidth="0.0" text="Sleeve">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="txtSleeveFrock" editable="false" onKeyTyped="#measurementKeyTyped" prefHeight="25.0" prefWidth="87.0">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="220.0">
+         <children>
+            <Label text="Description">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtOrderDescription" editable="false" prefHeight="29.0" prefWidth="150.0" styleClass="other-text-field">
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <TableView fx:id="tblOrderDetails" layoutX="400.0" layoutY="106.0" onMouseClicked="#tblOrderDetailsClickOnAction" prefHeight="250.0" prefWidth="620.0">
+         <columns>
+            <TableColumn fx:id="colFabricId" prefWidth="77.0" text="Fabric Id" />
+            <TableColumn fx:id="colMeasurementId" prefWidth="102.0" text="measurement Id" />
+            <TableColumn fx:id="colDressType" prefWidth="96.0" text="Dress Type" />
+            <TableColumn fx:id="colCost" minWidth="0.0" prefWidth="117.0" text="cost" />
+            <TableColumn fx:id="colQty" prefWidth="113.0" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="114.0" text="Unit Price" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

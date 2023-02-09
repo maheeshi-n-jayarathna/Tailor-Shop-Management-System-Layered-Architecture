@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anc" prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: #bdc3c7;" styleClass="anchorPane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.tailorshop.controller.SuppliesFormController">
+   <children>
+      <Pane layoutX="30.0" layoutY="14.0" prefHeight="68.0" prefWidth="990.0" style="-fx-background-color: linear-gradient(to right , #7A577A,#154666);">
+         <children>
+            <Button fx:id="btnClose1" layoutX="958.0" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #154666;">
+               <graphic>
+                  <FontAwesomeIconView fill="#b20404" glyphName="REMOVE" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <Label layoutX="50.0" layoutY="100.0" text="Supplies Id">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="164.0" text="Date">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupplesId" layoutX="100.0" layoutY="123.0" prefHeight="29.0" prefWidth="237.0" styleClass="other-text-field" />
+      <TextField fx:id="txtDescription" layoutX="440.0" layoutY="193.0" onAction="#txtDescriptionOnAction" prefHeight="29.0" prefWidth="237.0" styleClass="other-text-field" />
+      <TextField fx:id="txtDate" layoutX="100.0" layoutY="193.0" onAction="#txtDateOnAction" prefHeight="29.0" prefWidth="237.0" styleClass="other-text-field" />
+      <TableView fx:id="tblSupplies" layoutX="30.0" layoutY="391.0" onMouseClicked="#btnClickOnAction" prefHeight="295.0" prefWidth="755.0">
+         <columns>
+            <TableColumn fx:id="colFabricId" prefWidth="155.99996948242188" text="Fabric Id" />
+            <TableColumn fx:id="colDescription" prefWidth="212.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="107.0" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnStock" prefWidth="107.0" text="Qty On Stock" />
+            <TableColumn fx:id="colAddingQty" prefWidth="172.0" text="Adding Qty" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnSuppliesConfirm" layoutX="835.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnSuppliesConfirmOnAction" prefHeight="35.0" prefWidth="175.0" styleClass="suppliesConfirm-navigation-button" text="SUPPLIES CONFIRM" textFill="#eee1e1">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnRemove" layoutX="861.0" layoutY="420.0" mnemonicParsing="false" onAction="#btnRemoveOnAction" prefHeight="35.0" prefWidth="122.0" styleClass="remove-navigation-button" text="REMOVE" textFill="#eee1e1">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="390.0" layoutY="100.0" text="Fabric Id">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbFabricId" layoutX="440.0" layoutY="123.0" onAction="#cmbFabricIdOnAction" prefHeight="29.0" prefWidth="237.0" />
+      <TextField fx:id="txtQtyOnStock" layoutX="770.0" layoutY="193.0" onAction="#txtQtyOnStockOnAction" prefHeight="29.0" prefWidth="237.0" styleClass="other-text-field" />
+      <Label layoutX="390.0" layoutY="164.0" text="Description">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="720.0" layoutY="164.0" text="Qty On Stock">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="390.0" layoutY="240.0" text="Unit Price">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUnitPrice" layoutX="440.0" layoutY="267.0" onAction="#txtUnitPriceOnAction" prefHeight="29.0" prefWidth="237.0" styleClass="other-text-field" />
+      <Label layoutX="720.0" layoutY="240.0" text="Adding Qty">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddingQty" layoutX="770.0" layoutY="267.0" onAction="#txtAddingQtyOnAction" prefHeight="29.0" prefWidth="237.0" styleClass="other-text-field" />
+   </children>
+</AnchorPane>
